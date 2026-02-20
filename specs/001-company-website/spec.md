@@ -89,9 +89,9 @@ A visitor perceives Moon Publishing Media as a legitimate, established publisher
 - **FR-002**: Both pages MUST share an identical header containing the company logo (left-aligned) and a "Contact" navigation link (right-aligned)
 - **FR-003**: Both pages MUST share an identical footer containing the copyright notice "© 2026 Moon Publishing Media. All rights reserved."
 - **FR-004**: The Homepage MUST display three content sections in order: Hero (headline + subheadline), About ("Who We Are"), and Coming Soon ("Something New Is Coming")
-- **FR-005**: The Hero section MUST display the headline "Words that move you." and a subheadline describing Moon Publishing Media's focus on self-care and wellness content
+- **FR-005**: The Hero section MUST display the headline "Words that move you." and the subheadline "Moon Publishing Media is an independent publisher dedicated to wellness, self-care, and the stories that help us live better."
 - **FR-006**: The Coming Soon section MUST include the label "Currently in development" and MUST NOT reveal any app name, screenshots, or specific feature list
-- **FR-007**: The Contact page MUST display the heading "Say Hello", warm introductory copy, and the email address info@moonpublishingmedia.com as a clickable link that opens the visitor's mail client
+- **FR-007**: The Contact page MUST display the heading "Say Hello", the introductory copy "We'd love to hear from you — whether you're a reader, a writer, or just curious about what we're building.", and the email address info@moonpublishingmedia.com as a clickable link that opens the visitor's mail client
 - **FR-008**: The email address MUST be displayed prominently as a standalone element, not embedded inline within a paragraph
 - **FR-009**: The company logo MUST link to the Homepage from any page
 - **FR-010**: The site MUST be fully readable and properly laid out on devices from 375px to 2560px+ viewport width
