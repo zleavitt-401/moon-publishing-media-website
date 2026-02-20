@@ -64,3 +64,10 @@ The app section on index.html must stay vague — **no app name, no screenshots,
 - Initial build: both pages + stylesheet from scratch
 - Placeholder SVG logo (to be replaced when real logo is provided)
 - Deploy to Vercel and connect moonpublishingmedia.com domain via Namecheap DNS
+
+## Active Technologies
+- HTML5 + CSS3 (no version management needed) + None — Google Fonts loaded via `<link>` tags (only external resource) (001-company-website)
+- N/A — pure static site, no data persistence (001-company-website)
+
+## Recent Changes
+- 001-company-website: Added HTML5 + CSS3 (no version management needed) + None — Google Fonts loaded via `<link>` tags (only external resource)
