@@ -91,12 +91,12 @@
 
 **Purpose**: Final quality pass across both pages. Ensure cross-page consistency, edge case handling, and deployment readiness.
 
-- [ ] T017 Verify header and footer markup is byte-for-byte identical in `index.html` and `contact.html` — diff the shared sections. If any drift occurred during implementation, sync both files. Files: `index.html`, `contact.html`
-- [ ] T018 Verify fallback font behavior: ensure `styles.css` font stacks include proper fallbacks (`serif` for headings, `sans-serif` for body) so the site remains fully readable if Google Fonts fail to load. File: `styles.css`
-- [ ] T019 [P] Verify zero rounded corners across all elements in `styles.css` — search for any `border-radius` declarations and remove them. Ensure no inherited browser defaults add rounding (buttons, inputs if any). File: `styles.css`
-- [ ] T020 [P] Verify no JavaScript exists in `index.html` or `contact.html` — no `<script>` tags, no inline event handlers, no JS files referenced. Files: `index.html`, `contact.html`
-- [ ] T021 Final responsive check: verify both pages at 375px (no horizontal scroll, all content readable), 768px (tablet layout adjusts), 1200px (desktop with generous whitespace), and 2560px (content stays centered, not stretched). Adjust CSS if any layout issues found. Also verify zero browser console errors (no 404s for fonts/stylesheets, no invalid CSS warnings, no JS errors) on both pages. Files: `index.html`, `contact.html`, `styles.css`
-- [ ] T022 Run quickstart.md testing checklist to validate all items pass. File: `specs/001-company-website/quickstart.md`
+- [x] T017 Verify header and footer markup is byte-for-byte identical in `index.html` and `contact.html` — diff the shared sections. If any drift occurred during implementation, sync both files. Files: `index.html`, `contact.html`
+- [x] T018 Verify fallback font behavior: ensure `styles.css` font stacks include proper fallbacks (`serif` for headings, `sans-serif` for body) so the site remains fully readable if Google Fonts fail to load. File: `styles.css`
+- [x] T019 [P] Verify zero rounded corners across all elements in `styles.css` — search for any `border-radius` declarations and remove them. Ensure no inherited browser defaults add rounding (buttons, inputs if any). File: `styles.css`
+- [x] T020 [P] Verify no JavaScript exists in `index.html` or `contact.html` — no `<script>` tags, no inline event handlers, no JS files referenced. Files: `index.html`, `contact.html`
+- [x] T021 Final responsive check: verify both pages at 375px (no horizontal scroll, all content readable), 768px (tablet layout adjusts), 1200px (desktop with generous whitespace), and 2560px (content stays centered, not stretched). Adjust CSS if any layout issues found. Also verify zero browser console errors (no 404s for fonts/stylesheets, no invalid CSS warnings, no JS errors) on both pages. Files: `index.html`, `contact.html`, `styles.css`
+- [x] T022 Run quickstart.md testing checklist to validate all items pass. File: `specs/001-company-website/quickstart.md`
 
 **Checkpoint**: Site is complete and deployment-ready. Both pages pass all acceptance scenarios from spec.md. No console errors. Responsive across all target viewports. Ready to push to GitHub for Vercel auto-deploy.
 
