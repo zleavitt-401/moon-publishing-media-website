@@ -1,15 +1,9 @@
 <!-- Sync Impact Report
-  Version change: N/A → 1.0.0 (initial ratification)
-  Added principles:
-    - I. Pure Static Simplicity
-    - II. Semantic & Accessible HTML
-    - III. Mobile-First Responsive CSS
-    - IV. Zero-Dependency Architecture
-    - V. Deployment Readiness
-  Added sections:
-    - Tech Stack Constraints
-    - File & Asset Conventions
-    - Governance
+  Version change: 1.0.0 → 1.1.0 (single-page consolidation)
+  Amended:
+    - I. Pure Static Simplicity: updated from "two-page" to "single-page"
+    - File & Asset Conventions: removed contact.html, updated structure
+    - Removed header/footer copy-paste rule (single page, no duplication needed)
   Templates requiring updates:
     - .specify/templates/plan-template.md ✅ compatible (no changes needed)
     - .specify/templates/spec-template.md ✅ compatible (no changes needed)
@@ -23,8 +17,8 @@
 
 ### I. Pure Static Simplicity
 
-Every decision MUST favor the simplest viable approach. This is a two-page
-company website (Home + Contact), not a web application.
+Every decision MUST favor the simplest viable approach. This is a single-page
+company website, not a web application.
 
 - No JavaScript frameworks, build tools, bundlers, or transpilers.
 - No CSS frameworks (Bootstrap, Tailwind, etc.).
@@ -52,8 +46,7 @@ clearly to browsers, screen readers, and search engines.
 
 The site MUST be fully usable on mobile devices, tablets, and desktops.
 
-- Use flexbox for layout. Grid is permitted but not required — prefer
-  simplicity over cleverness.
+- Use CSS Grid and flexbox for layout.
 - CSS MUST be organized in a single `styles.css` file following this order:
   CSS custom properties (variables) → reset/normalize → layout → components
   → utilities.
@@ -105,18 +98,12 @@ The complete project file structure:
 
 ```
 moon-publishing-media-website/
-├── index.html            # Home page
-├── contact.html          # Contact page
-├── styles.css            # Single shared stylesheet
+├── index.html            # Single-page site (all content)
+├── styles.css            # Single stylesheet (CSS Grid layout)
 ├── assets/               # Images and static assets (if any)
 ├── .specify/             # Spec Kit working files
 └── .claude/              # Claude Code commands
 ```
-
-- Header and footer markup MUST be copy-pasted identically across both HTML
-  files. No templating system, no includes, no iframes.
-- When updating shared markup (header, footer, nav), changes MUST be applied
-  to both files simultaneously.
 - File naming MUST use lowercase with hyphens (kebab-case).
 
 ## Governance
@@ -133,4 +120,4 @@ against the constitution before implementation.
 - **Compliance**: Every spec, plan, and task MUST pass a Constitution Check
   validating alignment with these principles before implementation begins.
 
-**Version**: 1.0.0 | **Ratified**: 2026-02-19 | **Last Amended**: 2026-02-19
+**Version**: 1.1.0 | **Ratified**: 2026-02-19 | **Last Amended**: 2026-02-19
