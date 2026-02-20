@@ -169,6 +169,69 @@ main {
   text-underline-offset: 0.15em;
 }
 
+/* Hero */
+.hero {
+  text-align: center;
+  padding: var(--spacing-section) 0;
+}
+
+.hero h1 {
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+.hero p {
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* About */
+.about {
+  padding: var(--spacing-section) 0;
+  max-width: 720px;
+}
+
+.about h2 {
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+.about p {
+  line-height: 1.7;
+  margin-bottom: var(--spacing-unit);
+}
+
+.about p:last-child {
+  margin-bottom: 0;
+}
+
+/* Coming Soon */
+.coming-soon {
+  padding: var(--spacing-section) 0;
+  max-width: 720px;
+}
+
+.coming-soon h2 {
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+.coming-soon p {
+  line-height: 1.7;
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+.status-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 0.25em;
+}
+
 /* 6. Utilities */
 
 /* ==========================================================================
@@ -183,6 +246,10 @@ main {
   .logo {
     max-width: 160px;
   }
+
+  .hero p {
+    max-width: 540px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -192,5 +259,13 @@ main {
 
   .logo {
     max-width: 180px;
+  }
+
+  .hero {
+    padding: calc(var(--spacing-section) * 1.25) 0;
+  }
+
+  .hero p {
+    max-width: 600px;
   }
 }
