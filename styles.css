@@ -148,9 +148,19 @@ main {
   text-decoration: none;
 }
 
-.logo {
-  max-width: 200px;
-  height: auto;
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  margin-right: 0.5rem;
+}
+
+.logo-wordmark {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
 }
 
 /* Nav */
@@ -283,8 +293,9 @@ main {
     padding: calc(var(--spacing-unit) * 1.5) var(--spacing-page-margin);
   }
 
-  .logo {
-    max-width: 240px;
+  .logo-icon {
+    width: 32px;
+    height: 32px;
   }
 
   .hero p {
@@ -297,8 +308,9 @@ main {
     padding: calc(var(--spacing-unit) * 2) var(--spacing-page-margin);
   }
 
-  .logo {
-    max-width: 280px;
+  .logo-icon {
+    width: 36px;
+    height: 36px;
   }
 
   .hero {
