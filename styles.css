@@ -52,3 +52,145 @@ svg {
   display: block;
   max-width: 100%;
 }
+
+/* ==========================================================================
+   3. Base / Typography
+   ========================================================================== */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   4. Layout
+   ========================================================================== */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-unit) var(--spacing-page-margin);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-page-margin);
+}
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-section) var(--spacing-page-margin) calc(var(--spacing-unit) * 2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* ==========================================================================
+   5. Components
+   ========================================================================== */
+
+/* Logo */
+.logo-link {
+  text-decoration: none;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+}
+
+.logo-link:hover {
+  text-decoration: none;
+}
+
+.logo {
+  max-width: 120px;
+  height: auto;
+  color: var(--color-text);
+}
+
+/* Nav */
+.site-header nav a {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.site-header nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* 6. Utilities */
+
+/* ==========================================================================
+   7. Media Queries (mobile-first, min-width)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .site-header {
+    padding: calc(var(--spacing-unit) * 1.5) var(--spacing-page-margin);
+  }
+
+  .logo {
+    max-width: 160px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .site-header {
+    padding: calc(var(--spacing-unit) * 2) var(--spacing-page-margin);
+  }
+
+  .logo {
+    max-width: 180px;
+  }
+}
