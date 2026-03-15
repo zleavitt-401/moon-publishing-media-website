@@ -300,6 +300,54 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
+/* Prose pages (privacy, etc.) */
+.page-prose {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--spacing-section) var(--spacing-page-margin);
+}
+
+.page-prose h1 {
+  margin-bottom: 0.5rem;
+}
+
+.page-prose h1::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 2px;
+  background-color: var(--color-accent);
+  margin-top: 0.75rem;
+}
+
+.page-prose .policy-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+.page-prose h2 {
+  font-size: var(--font-size-lg);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-prose p {
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+/* Footer links */
+.footer-links {
+  margin-top: 0.25rem;
+}
+
+.footer-links a {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
 /* ==========================================================================
    6. Media Queries (mobile-first, min-width)
    ========================================================================== */
