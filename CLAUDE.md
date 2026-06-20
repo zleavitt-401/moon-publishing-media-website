@@ -4,10 +4,10 @@
 > Always check constitution before design decisions.
 
 ## Project Overview
-**Moon Publishing Media Website** — A simple, professional two-page static site for moonpublishingmedia.com. Primary purpose: satisfy Apple Developer Program organization enrollment requirements while establishing real company credibility. Secondary purpose: introduce MPM as an independent publisher of wellness/self-care content with a digital app in development.
+**Moon Publishing Media Website** — A single-page static site for moonpublishingmedia.com. Primary purpose: satisfy Apple Developer Program organization enrollment requirements while establishing real company credibility. Secondary purpose: introduce MPM as an independent publisher of wellness/self-care content, now featuring Stream Reader, its app live on the App Store.
 
 ## Tech Stack
-- **Language**: Pure HTML5 + CSS3 — no frameworks, no build tools, no JavaScript
+- **Language**: Pure HTML5 + CSS3 — no frameworks, no build tools, no JavaScript except one cookieless analytics script (see below)
 - **Fonts**: Google Fonts (Cormorant Garamond + Inter) via `<link>` in `<head>`
 - **Logo**: Inline SVG (crescent moon + wordmark) — no external image files
 - **Deployment**: Vercel (static site) connected to Namecheap domain DNS
@@ -15,9 +15,8 @@
 ## File Structure
 ```
 /
-├── index.html        # Homepage
-├── contact.html      # Contact page
-├── styles.css        # Single shared stylesheet
+├── index.html        # Single-page site (all content)
+├── styles.css        # Single stylesheet (CSS Grid layout)
 └── CLAUDE.md
 ```
 
@@ -33,41 +32,52 @@ git push
 
 ## Core Principles
 See `.specify/constitution.md` for full standards. Key reminders:
-- **Zero JavaScript** unless strictly necessary
-- **Zero rounded corners** — angular, intentional design
+- **Zero JavaScript** except one cookieless, privacy-respecting analytics script (Vercel Web Analytics) — no other scripts, frameworks, or libraries
+- Rounded corners are permitted as a deliberate design choice
 - CSS organized: variables → reset → layout → components → utilities
-- Mobile-first, responsive via flexbox (375px → 1200px+)
+- Mobile-first, responsive via CSS Grid + flexbox (375px → 1200px+)
 - Semantic HTML: `<header>`, `<main>`, `<footer>`, `<section>`
 
 ## Design Tokens (quick reference)
 ```css
---color-bg: #FAF9F6;
+--color-bg: #E8EDF2;
 --color-text: #1C1C1C;
 --color-accent: #C4A0A0;
 --font-heading: 'Cormorant Garamond', serif;
 --font-body: 'Inter', sans-serif;
 ```
 
-## Pages
-| Page | File | Key Sections |
-|------|------|-------------|
-| Home | index.html | Hero, About, Coming Soon teaser, Footer |
-| Contact | contact.html | Heading, copy, mailto link, Footer |
+## Page Sections
+All content lives in a single `index.html` with an editorial two-column CSS Grid layout on desktop (single column on mobile):
+
+| Section | Description |
+|---------|-------------|
+| Hero | "Words that move you." tagline + company description (left column) |
+| About | "Who We Are" — publisher philosophy (right column, top) |
+| App | Stream Reader — name, features, screenshots, and App Store link are all permitted (right column, bottom) |
+| Contact | "Say Hello" + mailto link — compact horizontal bar |
+| Footer | Copyright |
 
 ## Contact Email
-`info@moonpublishingmedia.com` — displayed as a prominent `mailto:` link on contact.html. This is the only point of contact on the site.
+`info@moonpublishingmedia.com` — displayed as a `mailto:` link in the contact section. This is the only point of contact on the site.
 
-## App Teaser Policy
-The app section on index.html must stay vague — **no app name, no screenshots, no feature list.** Describe goals only: accessibility, focus, reading for real people. Update this section once the app launches publicly.
+## App Section Policy
+Stream Reader is publicly live on the App Store, so this section may name the app, describe its features, show screenshots, and link directly to its App Store listing. Forward-looking language about future content (e.g., ebooks) may remain intentionally vague.
+
+## Analytics
+A single cookieless, privacy-respecting analytics script (Vercel Web Analytics) is permitted as the only exception to the zero-JavaScript rule. It sets no cookies and collects no personal data, so no consent banner is required. No other analytics or tracking script may be added.
 
 ## Current Focus
-- Initial build: both pages + stylesheet from scratch
+- Single-page consolidated layout with editorial CSS Grid
 - Placeholder SVG logo (to be replaced when real logo is provided)
 - Deploy to Vercel and connect moonpublishingmedia.com domain via Namecheap DNS
 
 ## Active Technologies
 - HTML5 + CSS3 (no version management needed) + None — Google Fonts loaded via `<link>` tags (only external resource) (001-company-website)
 - N/A — pure static site, no data persistence (001-company-website)
+- Vercel Web Analytics (single cookieless script, the only permitted JS) (002-stream-reader-page)
+- Multi-file static pages: `index.html`, `streamreader.html`, `contact.html`, `privacy.html` sharing one `styles.css`; images under `/assets/` (002-stream-reader-page)
 
 ## Recent Changes
+- 002-stream-reader-page: Added dedicated Stream Reader product page; named the app on the homepage; shared header/footer nav (Stream Reader + Contact); cookieless Vercel Web Analytics; favicon/OG/SEO; `/assets/` image folder
 - 001-company-website: Added HTML5 + CSS3 (no version management needed) + None — Google Fonts loaded via `<link>` tags (only external resource)

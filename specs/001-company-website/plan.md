@@ -16,7 +16,7 @@ Build a two-page static company website (Home + Contact) for moonpublishingmedia
 **Target Platform**: Modern web browsers (Chrome, Safari, Firefox, Edge) on mobile and desktop
 **Project Type**: Single static site — flat file structure at repository root
 **Performance Goals**: Instant page load (no JS, no build, minimal CSS); sub-1s render on 3G connection
-**Constraints**: Zero JavaScript (unless strictly necessary for minor UX), zero rounded corners, zero dependencies, zero build step
+**Constraints**: Zero JavaScript (unless strictly necessary for minor UX, or for the one approved cookieless analytics script), zero dependencies, zero build step
 **Scale/Scope**: 2 HTML pages, 1 CSS file, 0 JS files — minimal scope by design
 
 ## Constitution Check

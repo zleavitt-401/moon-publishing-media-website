@@ -57,7 +57,7 @@ python3 -m http.server 8000
 - [ ] Header and footer are visually identical on both pages
 - [ ] Responsive: no horizontal scroll at 375px; centered content at 1200px+
 - [ ] Typography: serif headings (Cormorant Garamond), sans-serif body (Inter)
-- [ ] No rounded corners on any element
+- [ ] Corner treatment (angular or rounded) is applied consistently
 - [ ] No JavaScript errors in browser console
 - [ ] Fallback fonts render if Google Fonts fail (disconnect network to test)
 
@@ -87,8 +87,8 @@ These CSS custom properties control the visual identity:
 
 ## Constraints
 
-- **Zero JavaScript** — no JS files, no inline scripts (unless strictly necessary)
-- **Zero rounded corners** — angular design only
+- **Zero JavaScript** — no JS files, no inline scripts (unless strictly necessary, or for the one approved cookieless analytics script)
+- **Rounded corners permitted** — deliberate design choice, applied consistently
 - **Zero dependencies** — no package.json, no node_modules, no build tools
 - **Single stylesheet** — all CSS in `styles.css`
 - **Inline SVG** — logo embedded directly in HTML, no external image files

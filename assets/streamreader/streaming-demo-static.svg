@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 506" width="900" height="506" role="img" aria-label="Placeholder: static frame of streaming reading demo">
+  <rect width="900" height="506" fill="#1C1C1C"/>
+  <text x="50%" y="22%" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="700" fill="#C4A0A0">PLACEHOLDER — static frame</text>
+  <rect x="120" y="205" width="660" height="100" fill="none" stroke="#2F6FED" stroke-width="3"/>
+  <text x="450" y="270" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="44" fill="#FFFFFF">one line at your pace</text>
+  <text x="50%" y="86%" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#6B6B6B">Stream Reader — streaming demo</text>
+</svg>

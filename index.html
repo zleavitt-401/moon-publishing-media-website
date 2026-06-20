@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moon Publishing Media</title>
-  <meta name="description" content="Moon Publishing Media is an independent publisher dedicated to wellness, self-care, and the stories that help us live better.">
+  <title>Moon Publishing Media — Words that move you.</title>
+  <meta name="description" content="Moon Publishing Media is an independent publisher dedicated to wellness, self-care, and the stories that help us live better — and the maker of Stream Reader, a calmer way to read.">
+  <link rel="icon" href="assets/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Moon Publishing Media — Words that move you.">
+  <meta property="og:description" content="An independent self-care publisher, and the maker of Stream Reader, a calmer way to read.">
+  <meta property="og:image" content="assets/og-image.svg">
+  <meta property="og:url" content="https://moonpublishingmedia.com/">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -19,11 +26,12 @@
       <span class="logo-wordmark">Moon Publishing Media</span>
     </a>
     <nav>
+      <a href="streamreader.html">Stream Reader</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <main>
+  <main class="page-grid">
     <section class="hero">
       <h1>Words that move you.</h1>
       <p>Moon Publishing Media is an independent publisher dedicated to wellness, self-care, and the stories that help us live better.</p>
@@ -32,18 +40,26 @@
     <section class="about">
       <h2>Who We Are</h2>
       <p>We believe that the best ideas deserve to be heard. Moon Publishing Media is a small, independent publisher with a singular focus: creating content that supports real people in living healthier, more intentional lives.</p>
-      <p>From guided practices to reflective reading, everything we publish is rooted in care — for the reader, the craft, and the quiet moments that matter most.</p>
+      <p>From guided practices to reflective reading, everything we publish is rooted in care — for the reader, the craft, and the quiet moments that matter most. More is on the way.</p>
     </section>
 
-    <section class="coming-soon">
-      <h2>Something New Is Coming</h2>
-      <p>We're building a new way to bring wellness content into your daily routine — something simple, focused, and made for real life. It's not about more screen time. It's about making the time you spend count.</p>
-      <span class="status-label">Currently in development</span>
+    <section class="stream-reader-teaser">
+      <h2>Meet Stream Reader</h2>
+      <p>Our first app, Stream Reader, is a calmer way to read: it moves text past you one line at a time, at a pace you set, so it's easier to stay with the words. It's free on the App Store.</p>
+      <a href="streamreader.html" class="teaser-link">Learn more about Stream Reader</a>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2026 Moon Publishing Media. All rights reserved.</p>
+    <p class="footer-links">
+      <a href="streamreader.html">Stream Reader</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </p>
   </footer>
+
+  <!-- Cookieless, privacy-respecting analytics (Vercel Web Analytics). Sets no
+       cookies, collects no personal data — the only script on the site. -->
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

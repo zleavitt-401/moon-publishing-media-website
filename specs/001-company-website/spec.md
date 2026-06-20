@@ -70,7 +70,7 @@ A visitor perceives Moon Publishing Media as a legitimate, established publisher
 1. **Given** a visitor views any page, **When** they observe the typography, **Then** headings use an elegant serif font and body text uses a clean sans-serif font — both consistent across pages
 2. **Given** a visitor views any page, **When** they observe the color scheme, **Then** the background is a warm off-white, text is a soft near-black (not harsh pure black), and accent elements use a muted dusty rose tone
 3. **Given** a visitor views the logo, **When** they examine it at small sizes, **Then** the crescent moon shape and wordmark are both clearly recognizable and not blurry or distorted
-4. **Given** a visitor views any page, **When** they observe the overall design, **Then** there are no rounded corners on any elements — all shapes are angular and intentional
+4. **Given** a visitor views any page, **When** they observe the overall design, **Then** corner treatment (angular or rounded) is consistent and intentional across elements
 
 ---
 
@@ -90,14 +90,14 @@ A visitor perceives Moon Publishing Media as a legitimate, established publisher
 - **FR-003**: Both pages MUST share an identical footer containing the copyright notice "© 2026 Moon Publishing Media. All rights reserved."
 - **FR-004**: The Homepage MUST display three content sections in order: Hero (headline + subheadline), About ("Who We Are"), and Coming Soon ("Something New Is Coming")
 - **FR-005**: The Hero section MUST display the headline "Words that move you." and the subheadline "Moon Publishing Media is an independent publisher dedicated to wellness, self-care, and the stories that help us live better."
-- **FR-006**: The Coming Soon section MUST include the label "Currently in development" and MUST NOT reveal any app name, screenshots, or specific feature list
+- **FR-006**: The app section MAY name Stream Reader, describe its features, show screenshots, and link directly to its App Store listing
 - **FR-007**: The Contact page MUST display the heading "Say Hello", the introductory copy "We'd love to hear from you — whether you're a reader, a writer, or just curious about what we're building.", and the email address info@moonpublishingmedia.com as a clickable link that opens the visitor's mail client
 - **FR-008**: The email address MUST be displayed prominently as a standalone element, not embedded inline within a paragraph
 - **FR-009**: The company logo MUST link to the Homepage from any page
 - **FR-010**: The site MUST be fully readable and properly laid out on devices from 375px to 2560px+ viewport width
 - **FR-011**: The site MUST use two distinct typefaces: an elegant serif for headings and a clean sans-serif for body text
 - **FR-012**: The site MUST use a warm color palette: off-white background, soft near-black text, and muted dusty rose accents
-- **FR-013**: No element on the site MUST have rounded corners — all shapes MUST be angular
+- **FR-013**: Rounded corners are permitted as a deliberate design choice; corner treatment MUST be applied consistently
 - **FR-014**: The site MUST deploy and function correctly as a static site with no server-side processing
 - **FR-015**: The site MUST include a company logo consisting of a crescent moon shape and "Moon Publishing Media" wordmark
 
