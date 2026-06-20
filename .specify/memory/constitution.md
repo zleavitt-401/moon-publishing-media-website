@@ -1,13 +1,28 @@
 <!-- Sync Impact Report
-  Version change: 1.0.0 → 1.1.0 (single-page consolidation)
+  Version change: 1.1.0 → 1.2.0
   Amended:
-    - I. Pure Static Simplicity: updated from "two-page" to "single-page"
-    - File & Asset Conventions: removed contact.html, updated structure
-    - Removed header/footer copy-paste rule (single page, no duplication needed)
+    - I. Pure Static Simplicity: added a named exception permitting a single
+      cookieless, privacy-respecting analytics script (Vercel Web Analytics)
+      alongside the existing minor-UX-enhancement JS allowance
+    - III. Mobile-First Responsive CSS: removed the implicit "zero rounded
+      corners" expectation — rounded corners are now a permitted deliberate
+      design choice (previously enforced via FR-013, not a constitution
+      principle itself, but referenced from CLAUDE.md)
+  Added sections: none (Sync Impact Report only; principle bodies amended in place)
+  Removed sections:
+    - "Zero rounded corners" reminder in CLAUDE.md Core Principles
+    - App Teaser Policy section in CLAUDE.md
   Templates requiring updates:
     - .specify/templates/plan-template.md ✅ compatible (no changes needed)
     - .specify/templates/spec-template.md ✅ compatible (no changes needed)
     - .specify/templates/tasks-template.md ✅ compatible (no changes needed)
+    - CLAUDE.md ✅ updated (App Teaser Policy removed, rounded-corners
+      reminder removed, analytics exception documented)
+    - specs/001-company-website/spec.md ✅ updated (FR-006, FR-013, and the
+      related acceptance scenario revised to match the new rules)
+    - specs/001-company-website/plan.md ✅ updated (constraint line revised)
+    - specs/001-company-website/quickstart.md ✅ updated (checklist and
+      reminder lines revised)
   Follow-up TODOs: none
 -->
 
@@ -24,8 +39,13 @@ company website, not a web application.
 - No CSS frameworks (Bootstrap, Tailwind, etc.).
 - Pure HTML5 + CSS3 only.
 - JavaScript is permitted ONLY for minor UX enhancements (e.g., mailto link
-  construction to prevent spam scraping). If JS is added, it MUST be inline
-  or in a single small script — no external JS dependencies.
+  construction to prevent spam scraping) and for a single cookieless,
+  privacy-respecting analytics script (Vercel Web Analytics). The analytics
+  script MUST NOT set cookies or collect personal data, and therefore
+  requires no consent banner. No other analytics, tracking, or third-party
+  script is permitted. If JS is added, it MUST be inline or in a single
+  small script — no external JS dependencies beyond the one approved
+  analytics script.
 - YAGNI is strictly enforced: do not add features, abstractions, or tooling
   "for later." Build exactly what is needed now.
 
@@ -86,7 +106,7 @@ at all times.
 |-------------|-------------------------|---------------------------------|
 | Markup      | HTML5                   | JSX, Pug, EJS, Handlebars      |
 | Styling     | CSS3 (single file)      | Sass, Less, Tailwind, Bootstrap |
-| JavaScript  | None (or minimal inline)| React, Vue, jQuery, any lib     |
+| JavaScript  | None (or minimal inline; one cookieless analytics script permitted) | React, Vue, jQuery, any lib, other analytics/tracking |
 | Fonts       | Google Fonts via `<link>`| Self-hosted, Adobe Fonts        |
 | Icons/Logo  | Inline SVG              | Icon fonts, external PNGs       |
 | Hosting     | Vercel (static)         | SSR, serverless functions       |
@@ -120,4 +140,4 @@ against the constitution before implementation.
 - **Compliance**: Every spec, plan, and task MUST pass a Constitution Check
   validating alignment with these principles before implementation begins.
 
-**Version**: 1.1.0 | **Ratified**: 2026-02-19 | **Last Amended**: 2026-02-19
+**Version**: 1.2.0 | **Ratified**: 2026-02-19 | **Last Amended**: 2026-06-19
