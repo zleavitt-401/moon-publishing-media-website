@@ -75,6 +75,9 @@ A single cookieless, privacy-respecting analytics script (Vercel Web Analytics) 
 ## Active Technologies
 - HTML5 + CSS3 (no version management needed) + None — Google Fonts loaded via `<link>` tags (only external resource) (001-company-website)
 - N/A — pure static site, no data persistence (001-company-website)
+- Vercel Web Analytics (single cookieless script, the only permitted JS) (002-stream-reader-page)
+- Multi-file static pages: `index.html`, `streamreader.html`, `contact.html`, `privacy.html` sharing one `styles.css`; images under `/assets/` (002-stream-reader-page)
 
 ## Recent Changes
+- 002-stream-reader-page: Added dedicated Stream Reader product page; named the app on the homepage; shared header/footer nav (Stream Reader + Contact); cookieless Vercel Web Analytics; favicon/OG/SEO; `/assets/` image folder
 - 001-company-website: Added HTML5 + CSS3 (no version management needed) + None — Google Fonts loaded via `<link>` tags (only external resource)

@@ -6,8 +6,12 @@
   /* Colors */
   --color-bg: #E8EDF2;
   --color-text: #1C1C1C;
-  --color-accent: #C4A0A0;
+  --color-accent: #C4A0A0;            /* decorative dusty rose (fills, borders, rules) */
+  --color-accent-text: #925C5C;       /* darker rose for link/CTA text — meets WCAG AA (4.5:1) on --color-bg */
   --color-text-muted: #6B6B6B;
+  /* Stream Reader secondary accent (app blue). Placeholder value — finalize
+     from the real app artwork and re-check contrast (FR-021) during US1. */
+  --color-accent-app: #2F6FED;
 
   /* Typography */
   --font-heading: 'Cormorant Garamond', serif;
@@ -98,7 +102,7 @@ h3 {
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   text-decoration: underline;
   text-underline-offset: 0.15em;
 }
@@ -173,6 +177,12 @@ a:focus-visible {
 }
 
 /* Nav */
+.site-header nav {
+  display: flex;
+  gap: clamp(1rem, 3vw, 1.75rem);
+  align-items: center;
+}
+
 .site-header nav a {
   font-family: var(--font-body);
   color: var(--color-text);
@@ -180,11 +190,17 @@ a:focus-visible {
   font-size: var(--font-size-sm);
   font-weight: 500;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .site-header nav a:hover {
   text-decoration: underline;
   text-underline-offset: 0.15em;
+}
+
+.site-header nav a:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
 }
 
 /* Hero */
@@ -230,54 +246,41 @@ a:focus-visible {
   margin-bottom: 0;
 }
 
-/* Coming Soon */
-.coming-soon {
+/* Stream Reader teaser (homepage) */
+.stream-reader-teaser {
   padding: var(--spacing-section) 0;
 }
 
-.coming-soon h2 {
+.stream-reader-teaser h2 {
   margin-bottom: 0.75rem;
 }
 
-.coming-soon p {
+.stream-reader-teaser p {
   line-height: 1.65;
   margin-bottom: 1rem;
 }
 
-.status-label {
+.teaser-link {
   display: inline-block;
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
   font-weight: 500;
-  color: var(--color-accent);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  color: var(--color-accent-text);
+  letter-spacing: 0.02em;
+  text-decoration: none;
   border-bottom: 2px solid var(--color-accent);
-  padding-bottom: 0.25em;
+  padding-bottom: 0.2em;
 }
 
-/* Contact */
-.contact {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: var(--spacing-section) 0;
-  border-top: 1px solid var(--color-accent);
-}
-
-.contact h2 {
-  font-size: var(--font-size-lg);
-}
-
-.contact p {
-  line-height: 1.6;
-  color: var(--color-text-muted);
+.teaser-link:hover {
+  color: var(--color-text);
+  border-bottom-color: var(--color-text);
 }
 
 .email-link {
   display: inline-block;
-  background-color: var(--color-accent);
-  color: var(--color-bg);
+  background-color: var(--color-accent-text);
+  color: #FFFFFF;
   text-decoration: none;
   font-family: var(--font-body);
   font-size: var(--font-size-base);
@@ -292,7 +295,7 @@ a:focus-visible {
 .email-link:hover {
   text-decoration: underline;
   text-underline-offset: 0.15em;
-  color: var(--color-bg);
+  color: #FFFFFF;
 }
 
 .email-link:focus-visible {
@@ -341,11 +344,199 @@ a:focus-visible {
 /* Footer links */
 .footer-links {
   margin-top: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
 }
 
 .footer-links a {
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
+}
+
+/* Demo media: animated by default, static fallback under reduced-motion.
+   No JavaScript — the swap is CSS-only. (FR-022) */
+.demo-media .demo-static {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-media .demo-animated {
+    display: none;
+  }
+
+  .demo-media .demo-static {
+    display: block;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Stream Reader product page
+   -------------------------------------------------------------------------- */
+
+.sr-page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-page-margin);
+}
+
+.sr-page section,
+.sr-page aside {
+  padding: var(--spacing-section) 0;
+  border-top: 1px solid rgba(196, 160, 160, 0.3);
+}
+
+.sr-page > .sr-hero {
+  border-top: none;
+}
+
+.sr-page h2 {
+  margin-bottom: 1rem;
+}
+
+/* Hero */
+.sr-hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sr-app-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  margin-bottom: 1rem;
+}
+
+.sr-hero h1 {
+  margin-bottom: 0.5rem;
+}
+
+.sr-tagline {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  color: var(--color-accent-app);
+  margin-bottom: 1rem;
+}
+
+.sr-hero-lede {
+  max-width: 46ch;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+/* CTA group (hero + closing) */
+.sr-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sr-badge-link {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 12px;
+}
+
+.sr-badge-link img {
+  border-radius: 12px;
+}
+
+.sr-secondary-link {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-decoration-color: var(--color-accent-app);
+}
+
+/* What it does */
+.sr-what-media {
+  margin-bottom: 1.5rem;
+}
+
+.sr-what-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(47, 111, 237, 0.35);
+}
+
+.sr-what-copy p {
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+  max-width: 60ch;
+}
+
+.sr-what-copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* Features */
+.sr-feature-grid {
+  display: grid;
+  gap: var(--spacing-gutter);
+}
+
+.sr-feature {
+  margin: 0;
+}
+
+.sr-feature img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(47, 111, 237, 0.35);
+  margin: 0 auto 1rem;
+}
+
+.sr-feature figcaption h3 {
+  margin-bottom: 0.4rem;
+}
+
+.sr-feature figcaption p {
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  max-width: 42ch;
+}
+
+/* Privacy callout */
+.sr-privacy {
+  background-color: rgba(47, 111, 237, 0.07);
+  border: 1px solid rgba(47, 111, 237, 0.35);
+  border-radius: 14px;
+  padding: var(--spacing-section) var(--spacing-gutter);
+  margin: var(--spacing-section) 0;
+}
+
+.sr-privacy p {
+  line-height: 1.65;
+  max-width: 60ch;
+  margin-bottom: 1rem;
+}
+
+/* Who it's for */
+.sr-audience p {
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  max-width: 60ch;
+  margin-bottom: 0.75rem;
+}
+
+.sr-audience p:last-child {
+  margin-bottom: 0;
+}
+
+/* Closing CTA */
+.sr-closing {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ==========================================================================
@@ -366,11 +557,10 @@ a:focus-visible {
   .page-grid {
     display: grid;
     grid-template-columns: 5fr 7fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto;
     grid-template-areas:
       "hero  about"
-      "hero  soon"
-      "contact contact";
+      "hero  teaser";
   }
 
   .hero {
@@ -388,33 +578,38 @@ a:focus-visible {
     padding: var(--spacing-section) 0 var(--spacing-section) var(--spacing-gutter);
   }
 
-  .coming-soon {
-    grid-area: soon;
+  .stream-reader-teaser {
+    grid-area: teaser;
     border-left: 1px solid var(--color-accent);
     border-top: 1px solid rgba(196, 160, 160, 0.3);
     padding: var(--spacing-section) 0 var(--spacing-section) var(--spacing-gutter);
   }
 
-  /* Contact as horizontal bar */
-  .contact {
-    grid-area: contact;
+  /* Stream Reader: side-by-side CTA, two-up features, roomier hero icon */
+  .sr-cta-group {
     flex-direction: row;
+    justify-content: center;
+  }
+
+  .sr-app-icon {
+    width: 120px;
+    height: 120px;
+  }
+
+  .sr-feature-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .sr-what {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: var(--spacing-gutter);
     align-items: center;
-    gap: 1.5rem;
-    padding: var(--spacing-section-sm) 0;
   }
 
-  .contact h2 {
-    flex-shrink: 0;
-  }
-
-  .contact p {
-    flex: 1;
-  }
-
-  .email-link {
-    flex-shrink: 0;
-    align-self: center;
+  .sr-what h2 {
+    grid-column: 1 / -1;
   }
 }
 
