@@ -355,10 +355,61 @@ a:focus-visible {
   color: var(--color-text-muted);
 }
 
-/* Demo media: animated by default, static fallback under reduced-motion.
-   No JavaScript — the swap is CSS-only. (FR-022) */
+/* Demo media: animated by default, static fallback under reduced-motion,
+   plus a manual pause/play toggle. No JavaScript — checkbox + CSS only. (FR-022) */
+.demo-media {
+  position: relative;
+}
+
 .demo-media .demo-static {
   display: none;
+}
+
+.demo-pause-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.demo-pause-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid rgba(47, 111, 237, 0.35);
+  border-radius: 999px;
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-text);
+  cursor: pointer;
+  user-select: none;
+}
+
+.demo-pause-label-play {
+  display: none;
+}
+
+.demo-pause-checkbox:checked ~ .demo-animated {
+  display: none;
+}
+
+.demo-pause-checkbox:checked ~ .demo-static {
+  display: block;
+}
+
+.demo-pause-checkbox:checked ~ .demo-pause-label .demo-pause-label-pause {
+  display: none;
+}
+
+.demo-pause-checkbox:checked ~ .demo-pause-label .demo-pause-label-play {
+  display: block;
+}
+
+.demo-pause-checkbox:focus-visible ~ .demo-pause-label {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -368,6 +419,11 @@ a:focus-visible {
 
   .demo-media .demo-static {
     display: block;
+  }
+
+  .demo-pause-checkbox,
+  .demo-pause-label {
+    display: none;
   }
 }
 
