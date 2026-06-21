@@ -15,8 +15,12 @@
 ## File Structure
 ```
 /
-├── index.html        # Single-page site (all content)
-├── styles.css        # Single stylesheet (CSS Grid layout)
+├── index.html         # Homepage
+├── streamreader.html  # Stream Reader product page
+├── contact.html       # Contact page
+├── privacy.html       # Privacy policy
+├── styles.css         # Single shared stylesheet (CSS Grid layout)
+├── assets/            # Logo, favicon, OG images, Stream Reader screenshots
 └── CLAUDE.md
 ```
 
@@ -79,5 +83,6 @@ A single cookieless, privacy-respecting analytics script (Vercel Web Analytics) 
 - Multi-file static pages: `index.html`, `streamreader.html`, `contact.html`, `privacy.html` sharing one `styles.css`; images under `/assets/` (002-stream-reader-page)
 
 ## Recent Changes
+- 002-stream-reader-page: Rewrote privacy.html with an accurate policy reflecting cookie-free Vercel Web Analytics on the websites (replacing the prior "we collect nothing at all" framing); the app itself still collects nothing
 - 002-stream-reader-page: Added dedicated Stream Reader product page; named the app on the homepage; shared header/footer nav (Stream Reader + Contact); cookieless Vercel Web Analytics; favicon/OG/SEO; `/assets/` image folder
 - 001-company-website: Added HTML5 + CSS3 (no version management needed) + None — Google Fonts loaded via `<link>` tags (only external resource)
