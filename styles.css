@@ -484,12 +484,31 @@ a:focus-visible {
   margin-bottom: 1.75rem;
 }
 
-/* CTA group (hero + closing) */
+/* CTA group (hero + closing) — App Store badge + web app button, side by side */
 .sr-cta-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sr-cta-option {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
+}
+
+.sr-cta-divider {
+  align-self: stretch;
+  width: 1px;
+  background-color: var(--color-accent);
+}
+
+.sr-cta-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
 }
 
 .sr-badge-link {
@@ -499,13 +518,31 @@ a:focus-visible {
 }
 
 .sr-badge-link img {
+  display: block;
   border-radius: 12px;
 }
 
-.sr-secondary-link {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-  text-decoration-color: var(--color-accent-app);
+.sr-web-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 0 1.75rem;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--color-accent-app);
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid var(--color-accent-app);
+  border-radius: 12px;
+}
+
+.sr-web-button:hover {
+  color: #FFFFFF;
+  background-color: var(--color-accent-app);
 }
 
 /* What it does */
@@ -641,12 +678,7 @@ a:focus-visible {
     padding: var(--spacing-section) 0 var(--spacing-section) var(--spacing-gutter);
   }
 
-  /* Stream Reader: side-by-side CTA, two-up features, roomier hero icon */
-  .sr-cta-group {
-    flex-direction: row;
-    justify-content: center;
-  }
-
+  /* Stream Reader: two-up features, roomier hero icon */
   .sr-app-icon {
     width: 120px;
     height: 120px;
@@ -681,5 +713,16 @@ a:focus-visible {
 
   .page-grid {
     grid-template-columns: 2fr 3fr;
+  }
+}
+
+/* Narrow viewports: stack the CTA lockup, hide the divider */
+@media (max-width: 480px) {
+  .sr-cta-group {
+    flex-direction: column;
+  }
+
+  .sr-cta-divider {
+    display: none;
   }
 }
